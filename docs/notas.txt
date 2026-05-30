@@ -1,0 +1,32 @@
+# Checklist - Pendientes
+
+## Backend (NestJS)
+
+### Autenticación de Admin
+- [ ] Instalar @nestjs/jwt y @nestjs/passport
+- [ ] Crear módulo Auth con login (JWT)
+- [ ] Proteger rutas CRUD de products, categories y custom-orders con Guards
+- [ ] Endpoint POST /auth/login que devuelva token
+
+### Admin CRUD (endpoints ya existen pero sin protección)
+- [ ] Products: POST, GET, GET/:id, PATCH/:id, DELETE/:id (proteger con JWT)
+- [ ] Categories: POST, GET, GET/:id, PATCH/:id, DELETE/:id (proteger con JWT)
+- [ ] CustomOrders: GET (listar todos los pedidos, proteger con JWT)
+
+## Frontend (React)
+
+### Header
+- [ ] Corregir botón Contacto: usar Link de react-router en vez de window.location.href para evitar recarga completa
+
+### Admin Page
+- [ ] Crear página /admin con login (formulario de email/contraseña)
+- [ ] Dashboard con CRUD de productos (crear, editar, eliminar)
+- [ ] Dashboard con CRUD de categorías (crear, editar, eliminar)
+- [ ] Listar pedidos personalizados recibidos
+- [ ] Proteger rutas del admin (redirigir a login si no hay token)
+
+### Productos (seed/data)
+- [ ] Agregar 6+ productos de ejemplo a la base de datos (completar catálogo)
+
+### General
+- [ ] Verificar flujo completo: navegación, catálogo, detalle de producto
