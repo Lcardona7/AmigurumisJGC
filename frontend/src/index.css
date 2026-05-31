@@ -34,6 +34,10 @@ html {
   background-position: center;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

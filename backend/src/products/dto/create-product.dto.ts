@@ -18,6 +18,10 @@ export class CreateProductDto {
   images?: string[];
 
   @IsOptional()
+  @IsString()
+  videoUrl?: string;
+
+  @IsOptional()
   @IsBoolean()
   isAvailable?: boolean;
 

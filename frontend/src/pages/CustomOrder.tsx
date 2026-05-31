@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Upload, Sparkles, MessageCircle } from 'lucide-react';
+import { Upload, Sparkles } from 'lucide-react';
 import { Toaster, toast } from 'sonner';
 import { createCustomOrder } from '../services/api';
 
@@ -50,7 +50,7 @@ export function CustomOrder() {
   return (
     <>
       <Toaster position="top-center" richColors />
-      <div className="max-w-4xl mx-auto px-6 lg:px-12 py-12 space-y-12">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 py-8 sm:py-12 space-y-12">
         <div className="text-center space-y-6">
           <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-[#D8A7C8] to-[#F4A7C5] rounded-full mb-4 shadow-2xl">
             <Sparkles className="w-12 h-12 text-white" />

@@ -18,6 +18,9 @@ export class Product {
   @Column('simple-json', { default: '[]' })
   images: string[];
 
+  @Column({ nullable: true })
+  videoUrl: string;
+
   @Column({ default: true })
   isAvailable: boolean;
 

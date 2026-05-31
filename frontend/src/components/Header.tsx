@@ -1,16 +1,16 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { MessageCircle, Menu, X } from 'lucide-react';
 import { ImageWithFallback } from './ImageWithFallback';
 import { useState, useCallback } from 'react';
 
 const links = [
   { to: '/', label: 'Inicio' },
-  { to: '/catalogo', label: 'Catálogo' },
   { to: '/personalizado', label: 'Personalizado' },
 ];
 
 export function Header() {
   const location = useLocation();
+  const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
   const currentPath = location.pathname;
 
@@ -35,18 +35,18 @@ export function Header() {
     if (location.pathname === '/') {
       document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' });
     } else {
-      window.location.href = '/#contacto';
+      navigate('/#contacto');
     }
-  }, [location.pathname]);
+  }, [location.pathname, navigate]);
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-[#EDD5E8] shadow-sm">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center gap-3" onClick={() => setMenuOpen(false)}>
+          <Link to="/" className="flex items-center gap-3" onClick={() => { setMenuOpen(false); if (location.pathname === '/') window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
             <div className="bg-white rounded-full p-1 shadow-md">
               <ImageWithFallback
-                src="/logo.png"
+                src="/logoposta.png"
                 alt="Amigurumis JGC"
                 className="w-10 h-10 rounded-full object-cover"
               />

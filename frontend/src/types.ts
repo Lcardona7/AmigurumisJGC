@@ -10,6 +10,7 @@ export interface Product {
   description: string;
   price: number;
   images: string[];
+  videoUrl?: string;
   isAvailable: boolean;
   categoryId: number;
   category?: Category;
